@@ -20,13 +20,11 @@ public class SysResponse {
     }
 
     public LocalTime getSunrise() {
-        LocalTime timeOfDay = Instant.ofEpochSecond(sunrise).atOffset(ZoneOffset.UTC).toLocalTime();
-        return timeOfDay;
+        return Instant.ofEpochSecond(sunrise).atOffset(ZoneOffset.UTC).toLocalTime();
     }
 
     public LocalTime getSunset() {
 
-        LocalTime timeOfDay = Instant.ofEpochSecond(sunset).atOffset(ZoneOffset.UTC).toLocalTime();
-        return timeOfDay;
+        return Instant.ofEpochSecond(sunset).atOffset(ZoneOffset.UTC).toLocalTime();
     }
 }
