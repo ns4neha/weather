@@ -1,0 +1,17 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Getting Started: Handling Form Submission</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	<h1>Select City</h1>
+    <form action="#" th:action="@{/weather}" th:object="${weathersearch}" method="post">
+    	<select th:field="*{city}">
+          <option th:value="London" th:text="London"></option>
+          <option th:value="Hongkong" th:text="Hongkong"></option>
+        </select>
+        <p><input type="submit" value="Submit" /> </p>
+    </form>
+</body>
+</html>
