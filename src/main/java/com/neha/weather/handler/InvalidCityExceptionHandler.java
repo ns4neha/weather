@@ -1,4 +1,4 @@
-package com.neha.weather_test.handler;
+package com.neha.weather.handler;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;

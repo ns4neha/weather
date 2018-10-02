@@ -1,7 +1,7 @@
-package com.neha.weather_test.controller;
+package com.neha.weather.controller;
 
-import com.neha.weather_test.client.WeatherClient;
-import com.neha.weather_test.response.WeatherDataResponse;
+import com.neha.weather.client.WeatherClient;
+import com.neha.weather.response.WeatherDataResponse;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,7 +22,6 @@ public class WeatherController {
 
     @PostMapping(value = "/weather", produces = "application/json")
     public WeatherDataResponse getWeatherDetails(@ModelAttribute WeatherSearch search){
-
 
         return weatherClient.getCity(search.getCity()).toResponse();
     }

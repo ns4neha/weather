@@ -1,9 +1,7 @@
-package com.neha.weather_test.response;
+package com.neha.weather.response;
 
 import lombok.Builder;
 import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
 
 import java.util.Date;
 

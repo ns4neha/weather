@@ -1,4 +1,4 @@
-package com.neha.weather_test.controller;
+package com.neha.weather.controller;
 
 import lombok.Data;
 

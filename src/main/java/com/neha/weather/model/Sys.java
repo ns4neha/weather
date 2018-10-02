@@ -1,5 +1,5 @@
 
-package com.neha.weather_test.model;
+package com.neha.weather.model;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -9,6 +9,9 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.NoArgsConstructor;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
@@ -19,6 +22,9 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
     "sunrise",
     "sunset"
 })
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class Sys {
 
     @JsonProperty("type")
@@ -35,32 +41,6 @@ public class Sys {
     private Integer sunset;
     @JsonIgnore
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
-
-    /**
-     * No args constructor for use in serialization
-     * 
-     */
-    public Sys() {
-    }
-
-    /**
-     * 
-     * @param message
-     * @param id
-     * @param sunset
-     * @param sunrise
-     * @param type
-     * @param country
-     */
-    public Sys(Integer type, Integer id, Double message, String country, Integer sunrise, Integer sunset) {
-        super();
-        this.type = type;
-        this.id = id;
-        this.message = message;
-        this.country = country;
-        this.sunrise = sunrise;
-        this.sunset = sunset;
-    }
 
     @JsonProperty("type")
     public Integer getType() {

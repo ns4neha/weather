@@ -1,10 +1,10 @@
-package com.neha.weather_test.controller;
+package com.neha.weather.controller;
 
-import com.neha.weather_test.client.WeatherClient;
-import com.neha.weather_test.model.Weather;
-import com.neha.weather_test.model.WeatherData;
-import com.neha.weather_test.response.WeatherDataResponse;
-import com.neha.weather_test.response.WeatherResponse;
+import com.neha.weather.client.WeatherClient;
+import com.neha.weather.model.Sys;
+import com.neha.weather.model.Weather;
+import com.neha.weather.model.WeatherData;
+import com.neha.weather.response.WeatherDataResponse;
 import org.assertj.core.util.Lists;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -14,9 +14,9 @@ import org.springframework.context.support.GenericApplicationContext;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
 
-import java.util.Arrays;
+import java.time.Instant;
+import java.time.ZoneOffset;
 import java.util.Date;
-import java.util.List;
 
 import static org.junit.Assert.assertEquals;
 import static org.mockito.Mockito.verify;
@@ -48,6 +48,7 @@ public class WeatherControllerTest {
                 .dt(1538414400)
                 .weather(Lists.newArrayList(
                         Weather.builder().description("Cloudy").build()))
+                .sys(Sys.builder().country("GB").sunrise(1538414400).sunset(1538414400).build())
                 .build() ;
         when(weatherClient.getCity(city)).thenReturn(weatherData);
 
@@ -59,6 +60,10 @@ public class WeatherControllerTest {
         verify(weatherClient).getCity(city);
         assertEquals("London", weatherDataResponse.getName());
         assertEquals(new Date(1538414400), weatherDataResponse.getDate());
+        assertEquals("Cloudy", weatherDataResponse.getWeatherResponse().getDescription());
+        assertEquals("GB", weatherDataResponse.getSysResponse().getCountry());
+        assertEquals(Instant.ofEpochSecond(1538414400).atOffset(ZoneOffset.UTC).toLocalTime()
+                ,weatherDataResponse.getSysResponse().getSunrise());
 
     }
 

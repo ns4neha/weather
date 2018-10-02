@@ -1,5 +1,5 @@
 
-package com.neha.weather_test.model;
+package com.neha.weather.model;
 
 import java.util.HashMap;
 import java.util.Map;

@@ -1,4 +1,4 @@
-package com.neha.weather_test;
+package com.neha.weather;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

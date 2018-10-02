@@ -1,5 +1,5 @@
 
-package com.neha.weather_test.model;
+package com.neha.weather.model;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -12,12 +12,15 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
-    "all"
+    "lon",
+    "lat"
 })
-public class Clouds {
+public class Coord {
 
-    @JsonProperty("all")
-    private Integer all;
+    @JsonProperty("lon")
+    private Double lon;
+    @JsonProperty("lat")
+    private Double lat;
     @JsonIgnore
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
@@ -25,26 +28,38 @@ public class Clouds {
      * No args constructor for use in serialization
      * 
      */
-    public Clouds() {
+    public Coord() {
     }
 
     /**
      * 
-     * @param all
+     * @param lon
+     * @param lat
      */
-    public Clouds(Integer all) {
+    public Coord(Double lon, Double lat) {
         super();
-        this.all = all;
+        this.lon = lon;
+        this.lat = lat;
     }
 
-    @JsonProperty("all")
-    public Integer getAll() {
-        return all;
+    @JsonProperty("lon")
+    public Double getLon() {
+        return lon;
     }
 
-    @JsonProperty("all")
-    public void setAll(Integer all) {
-        this.all = all;
+    @JsonProperty("lon")
+    public void setLon(Double lon) {
+        this.lon = lon;
+    }
+
+    @JsonProperty("lat")
+    public Double getLat() {
+        return lat;
+    }
+
+    @JsonProperty("lat")
+    public void setLat(Double lat) {
+        this.lat = lat;
     }
 
     @JsonAnyGetter

@@ -1,5 +1,5 @@
 
-package com.neha.weather_test.model;
+package com.neha.weather.model;
 
 import java.util.Date;
 import java.util.HashMap;
@@ -10,8 +10,9 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-import com.neha.weather_test.response.WeatherDataResponse;
-import com.neha.weather_test.response.WeatherResponse;
+import com.neha.weather.response.WeatherDataResponse;
+import com.neha.weather.response.WeatherResponse;
+import com.neha.weather.response.SysResponse;
 import lombok.*;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -73,6 +74,10 @@ public class WeatherData {
                         .builder()
                         .description(this.getWeather().get(0).getDescription())
                         .build())
+                .sysResponse(SysResponse.builder()
+                        .country(sys.getCountry())
+                        .sunrise(sys.getSunrise())
+                        .sunset(sys.getSunset()).build())
                 .build();
 
     }

@@ -1,4 +1,4 @@
-package com.neha.weather_test;
+package com.neha.weather;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

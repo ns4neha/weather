@@ -1,4 +1,4 @@
-package com.neha.weather_test.controller;
+package com.neha.weather.controller;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;

@@ -1,6 +1,6 @@
-package com.neha.weather_test.client;
+package com.neha.weather.client;
 
-import com.neha.weather_test.model.WeatherData;
+import com.neha.weather.model.WeatherData;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
